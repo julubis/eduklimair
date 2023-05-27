@@ -1,0 +1,181 @@
+/*if (mediaQuery1) {
+  header.innerHTML = '';
+  header.innerHTML = `
+    <h1 id="logo"><a href="#/home">eduklimair</a></h1>
+    <nav id="nav">
+    <ul id="ul1">
+      <li><a href="#">Home</a></li>
+      <li id="listArticle">
+      <a href="#">Material
+          <ul id="dropDownArticle">
+          <li id="atas"><a href="#/home">Kelangkaan Air Bersih</a></li>
+          <li><a href="#/sanitasiyangtidaklayak">Sanitasi yang tidak layak</a></li>
+          <li id="bawah"><a href="#/perubahaniklimdiindonesia">Perubahan iklim di Indonesia</a></li>
+          </ul>
+      </a>
+      </li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+    </nav>
+    <img id="hamburgerButton" src="./hamburgerButton.png">
+  `;
+}*/
+
+
+
+const navigasiBuka = (event) => {
+  nav.style.left = '50%';
+  event.preventDefault();
+};
+const navigasiTutup = (event) => {
+  nav.style.left = '100%';
+  event.preventDefault();
+};
+const aaa = (event) => {
+  qqq.style.display = 'block';
+  event.preventDefault();
+};
+
+cornerButton.addEventListener('click', navigasiBuka);
+main.addEventListener('click', navigasiTutup);
+logo.addEventListener('click', navigasiTutup);
+
+
+
+
+
+
+
+
+
+
+if (mediaQuery2) {
+  header.innerHTML = '';
+  header.innerHTML = `
+    <h1 id="logo"><a href="#/home">Eduklimair.</a></h1>
+    <p></p>
+    <nav id="nav">
+      <ul id="ul1">
+      <li><a href="#">Home</a></li>
+      <li id="listArticle"><a href="#">Material
+        <ul id="dropDownArticle">
+          <li id="atas" class="listItemArticles1">Kelangkaan Air Bersih
+            <ul id="listItemArticles1_1">
+              <li>Pengertian</li>
+              <li>Permasalahan</li>
+              <li>Inovasi</li>
+            </ul>
+          </li>
+          <li>Sanitasi yang tidak layak</li>
+          <li id="bawah">Perubahan iklim di Indonesia</li>
+        </ul>
+      </a></li>
+      <li><a href="#">About Us</a></li>
+      <li id="signLogInOut"><a href="#">Sign in</a></li>
+    </ul>
+    </nav>
+    <p></p>
+    <p></p>
+  `;
+}
+tombolLanjut.addEventListener('click', () => {
+  header.style.backgroundColor = 'red';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const mediaQuery1 = window.matchMedia('(max-width: 630px)');
+const mediaQuery2 = window.matchMedia('(min-width: 631px)');
+
+const nav = document.getElementById('nav');
+const main = document.getElementById('main');
+const logo = document.getElementById('logo');
+const footer = document.getElementById('footer');
+const listArticle = document.getElementById('listArticle');
+const m = document.getElementById('listArticle');
+const tombolLatest = document.querySelectorAll('.tombolLatest2');
+const c7 = document.querySelectorAll('.container7');
+
+tombolLatest.addEventListener('click', () => {
+  console.log('tombol ditekan');
+});
+
+/*const aaa = () => {
+  listArticle.style.color = 'red';
+};
+logo.addEventListener('mouseover', aaa);
+
+if (mediaQuery2) {
+  header.innerHTML = '';
+  header.innerHTML = `
+    <h1 id="logo"><a href="#/home">Eduklimair.</a></h1>
+    <p></p>
+    <nav id="nav">
+      <ul id="ul1">
+      <li><a href="#">Home</a></li>
+      <li id="listArticle"><a href="#">Material
+        <ul id="dropDownArticle">
+          <li id="atas" class="listItemArticles1">Kelangkaan Air Bersih
+            <ul id="listItemArticles1_1">
+              <li>Pengertian</li>
+              <li>Permasalahan</li>
+              <li>Inovasi</li>
+            </ul>
+          </li>
+          <li>Sanitasi yang tidak layak</li>
+          <li id="bawah">Perubahan iklim di Indonesia</li>
+        </ul>
+      </a></li>
+      <li><a href="#">About Us</a></li>
+      <li id="signLogInOut"><a href="#">Sign in</a></li>
+    </ul>
+    </nav>
+    <p></p>
+    <p></p>
+  `;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+

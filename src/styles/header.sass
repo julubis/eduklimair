@@ -1,0 +1,130 @@
+/*KESELURUHAN*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*HEADER*/
+header{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    background: rgb(0,187,225);
+    background: linear-gradient(90deg, rgba(0,187,225,1) 39%, rgba(16,67,175,1) 100%);
+    height: 70px;
+    width: 100%;
+    position:fixed;
+    z-index: 1;
+    padding: 1px 10px;
+}
+/*LOGO*/
+#logo{
+    margin: 10px 20px;
+    z-index: 0;
+    margin-right: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#logo a{
+    text-decoration: none;
+    color: aliceblue;
+}
+/*NAVIGATION 1*/
+#ul1 li{
+    display: inline-block;
+    list-style-type: none;
+    cursor: pointer;
+    color: aliceblue;
+    padding: 25px 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#ul1 li a{
+    text-decoration: none;
+    color: aliceblue;
+}
+#ul1 #signLogInOut a{
+    color: rgb(0, 119, 255);
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 7px;
+}
+/*DROPDOWN MENU "ARTICLE"*/
+#dropDownArticle{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+    border: 0px solid black;
+}
+#dropDownArticle li{
+    padding: 13px;
+    color:rgb(0, 119, 255);
+    display: block;
+}
+#listItemArticles{
+    background-color: aliceblue;
+}
+#listArticle:hover #dropDownArticle{
+    display: block;
+}
+#dropDownArticle .childListItemArticles li{
+    display: block;
+    background: rgb(0,187,225);
+    background: linear-gradient(90deg, rgba(0,187,225,1) 39%, rgba(16,67,175,1) 100%);
+    color: aliceblue;
+}
+.childListItemArticles{
+    display: none;
+}
+#header:hover footer{
+    color: brown;
+}
+#tampunganDropDown{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+/*NAVIGATION 2*/
+#nav2{
+    position: fixed;
+    display: block;
+    left: 100%;
+    width: 50%;
+    background-color: aliceblue;
+    height: 100%; 
+    padding-top: 20px;
+    border-radius: 30px 0px 0px 0px;
+    overflow:auto;
+}
+#ul2 li{
+    list-style-type: none;
+    font-size: 15px;
+    padding: 18px 20px;
+    text-align: left;
+    color:rgb(0, 119, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#ul2 li a{
+    text-decoration: none;
+    color:rgb(0, 119, 255);
+}
+#dropDownArticle2 .childListItemArticles2{
+    display: none;
+    background:aliceblue;
+}
+#dropDownArticle2 .childListItemArticles2 li{
+    color:rgb(0, 119, 255);
+}
+#dropDownArticle2{
+    display: none;
+    background: rgb(0,187,225);
+    background: linear-gradient(90deg, rgba(0,187,225,1) 39%, rgba(16,67,175,1) 100%);
+}
+#dropDownArticle2 li{
+    color: aliceblue
+}
+#hamburgerButton{
+    margin: auto 0px;
+}
