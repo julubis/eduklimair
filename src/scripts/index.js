@@ -3,5 +3,6 @@ import '../styles/header.sass';
 import '../styles/responsive.sass';
 import '../styles/mainHome1.sass';
 import '../styles/footer.sass';
-import './navigationDrawer';
-import './tombolLatest';
+import '../styles/signUp.sass';
+import './utils/navigationDrawer';
+import './utils/tombolLatest';
