@@ -13,6 +13,7 @@
     "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-console": 0,
-        "linebreak-style": ["error", "windows"]
+        "linebreak-style": ["error", "windows"],
+        "no-underscore-dangle": "off"
     }
 }
