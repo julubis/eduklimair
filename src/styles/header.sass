@@ -48,7 +48,7 @@ header
     padding: 7px
 
 // DROPDOWN MENU "ARTICLE"
-#dropDownArticle
+#dropDownArticle, #dropDownUser
     display: flex
     flex-direction: column
     position: absolute
@@ -58,16 +58,19 @@ header
     border-radius: 10px
     border: 1px solid blue
 
-#dropDownArticle li
+#dropDownArticle li, #dropDownUser li
     padding: 13px
     color: rgb(0, 119, 255)
     display: block
 
-#listItemArticles
+.listItemArticles 
     background-color: aliceblue
     display: none
 
-#listArticle:hover #dropDownArticle
+#listArticle:hover #dropDownArticle, .listUser:hover #dropDownUser
+    display: block
+
+.dropDownUser:hover .dropdown-item
     display: block
 
 #dropDownArticle .childListItemArticles li
@@ -82,7 +85,7 @@ header
 #header:hover footer
     color: brown
 
-#tampunganDropDown
+.tampunganDropDown
     margin-top: 20px
     padding-top: 20px
 
@@ -111,25 +114,32 @@ header
     text-decoration: none
     color: rgb(0, 119, 255)
 
-#dropDownArticle2 .childListItemArticles2
+.dropDownArticle2 .childListItemArticles2, .childListItemArticles2
     display: none
     background: aliceblue
 
-#dropDownArticle2 .childListItemArticles2 li
+.dropDownArticle2 .childListItemArticles2.open, .childListItemArticles2.open
+    display: block
+
+.dropDownArticle2 .childListItemArticles2 li
     color: rgb(0, 119, 255)
 
-#dropDownArticle2
+.dropDownArticle2
     display: none
     background: rgb(0,187,225)
     background: linear-gradient(90deg, rgba(0,187,225,1) 39%, rgba(16,67,175,1) 100%)
+.dropDownArticle2.open
+    display: block
 
-#dropDownArticle2 li
+
+.dropDownArticle2 li
     color: aliceblue
 
 #hamburgerButton
     margin: auto 0px
 
-
+.dropdown-item.open
+    display: block
 // .dropdown ul
 //     display: none
 
