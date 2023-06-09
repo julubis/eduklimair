@@ -1,8 +1,8 @@
 import API from '../globals/api-endpoint';
 
 class Article {
-  static async list({ title, category }) {
-    const response = await fetch(`${API.ARTICLE_LIST}${new URLSearchParams({ title, category })}`);
+  static async list(filter = null) {
+    const response = await fetch(`${API.ARTICLE_LIST}?${filter ? new URLSearchParams(filter) : ''}`);
     return response.json();
   }
 

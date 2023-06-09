@@ -1,0 +1,213 @@
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+.admin {
+  padding-top: 86px;
+  padding-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  .article-list {
+    article {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+
+      picture {
+        display: flex;
+        min-height: 9.375rem;
+        overflow: hidden;
+        border-radius: .625rem;
+        img {
+          width: 100%;
+          aspect-ratio: 8 / 4.5;
+          object-position: center;
+          object-fit: cover;
+          transition: 0.3s;
+          @media (min-width: $md) {
+            display: flex;
+            width: 32rem;
+          }
+        }
+      }
+      picture:hover {
+        img {
+          transform: scale(1.25);
+        }
+      }
+      .body {
+        padding: .375rem;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: .375rem;
+          h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            margin-top: .375rem;
+            overflow-y: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+
+            @media (min-width: $md) {
+              margin: 0;
+              font-size: 1.5rem;
+              -webkit-line-clamp: 3 !important;
+            }
+          }
+          h4 {
+            margin: 0;
+
+            @media (min-width: $md) {
+              font-size: .875rem;
+            }
+          }
+          p {
+            font-size: .875rem;
+            margin: 0;
+            overflow-y: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+
+            @media (min-width: $md) {
+              font-size: 1.125rem !important;
+            }
+          }
+        }
+        button {
+          font-family: 'Poppins', sans-serif;
+          cursor: pointer;
+          background-color: white;
+          border-radius: .375rem;
+          border-color: transparent;
+          padding: .625rem 1.25rem;
+          margin-top: .625rem;
+          border: 2px solid rgb(0, 100, 250);
+          color: rgb(0, 100, 250);
+          font-size: .875rem;
+        }
+        button:hover {
+          background-color: rgb(0, 100, 250);
+          color: white;
+        }
+        @media (min-width: $md) {
+          display: flex;
+          flex-direction: column;
+          max-width: 50%;
+          width: auto;
+          height: 100%;
+        }
+      }
+      @media (min-width: $md) {
+        flex-direction: row !important;
+        justify-content: space-around;
+      }
+    }
+  }
+  .article-view {
+    article {
+      h2 {
+        font-size: 1.5rem;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+      }
+      p {
+        font-size: .875rem;
+      }
+      .action-post {
+        display: flex;
+        gap: 1.25rem;
+        button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          color: rgb(107, 107, 107);
+          padding: 0;
+        }
+        button:hover {
+          color: black;
+        }
+        i {
+          margin-left: 3px;
+        }
+      }
+      picture {
+        margin-top: 1.25rem;
+        margin-bottom: .625rem;
+        img {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-position: center;
+          object-fit: cover;
+          border-radius: .5rem;
+        }
+      }
+      .article {
+        p {
+          margin-bottom: .625rem;
+        }
+      }
+    }
+    .comment-post {
+      background-color: rgb(209, 209, 209);
+      border-radius: .5rem;
+      padding: .625rem;
+      margin-top: 1.25rem;
+      h6 {
+        margin: 0;
+        font-size: .875rem;
+        font-weight: 600;
+      }
+      form {
+        display: flex;
+        padding: .375rem 1rem;
+        border-radius: .625rem;
+        background-color: white;
+        margin-top: 1.25rem;
+        textarea {
+          width: 100%;
+          border: none;
+          text-decoration: none;
+          padding-bottom: 0;
+          padding-top: .5rem;
+        }
+        button {
+          background-color: rgb(0, 100, 250);
+          color: white;
+          border: none;
+          border-radius: .375rem;
+          padding: .375rem 1rem;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: rgb(0, 82, 204);
+        }
+      }
+    }
+  }
+  .container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $sm) {
+      max-width: $sm;
+    }
+
+    @media (min-width: $md) {
+      max-width: $md;
+    }
+
+    @media (min-width: $lg) {
+      max-width: $lg;
+    }
+
+    @media (min-width: $xl) {
+      max-width: $xl;
+    }
+  }
+}

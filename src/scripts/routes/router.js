@@ -14,8 +14,6 @@ const routes = [
   { path: /^\/about$/, handler: About },
 ];
 
-console.log(routes);
-
 // const routes = {
 
 //   '/': Home,
