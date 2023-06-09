@@ -1,11 +1,11 @@
 import 'regenerator-runtime';
-import '../styles/header.sass';
-import '../styles/responsive.sass';
-import '../styles/mainHome1.sass';
-import '../styles/footer.sass';
-import '../styles/signUp.sass';
-import '../styles/aboutUs.sass';
-import '../styles/admin.sass';
+import '../styles/header.scss';
+import '../styles/responsive.scss';
+import '../styles/mainHome1.scss';
+import '../styles/footer.scss';
+import '../styles/signUp.scss';
+import '../styles/aboutUs.scss';
+import '../styles/admin.scss';
 // import './utils/tombolLatest';
 import App from './views/app';
 
