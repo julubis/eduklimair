@@ -8,8 +8,9 @@ class Article {
 
   static async detail(id) {
     const options = {
+      credentials: 'include',
       headers: {
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.ARTICLE_DETAIL(id), options);
@@ -20,8 +21,9 @@ class Article {
     const options = {
       method: 'POST',
       body: data,
+      credentials: 'include',
       headers: {
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'multipart/form-data',
       },
     };
@@ -33,8 +35,9 @@ class Article {
     const options = {
       method: 'PUT',
       body: data,
+      credentials: 'include',
       headers: {
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'multipart/form-data',
       },
     };
@@ -45,8 +48,9 @@ class Article {
   static async delete(id) {
     const options = {
       method: 'DELETE',
+      credentials: 'include',
       headers: {
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.ARTICLE_DETAIL(id), options);
@@ -56,8 +60,9 @@ class Article {
   static async like(id) {
     const options = {
       method: 'POST',
+      credentials: 'include',
       headers: {
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.ARTICLE_DETAIL(id), options);

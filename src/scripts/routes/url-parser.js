@@ -12,6 +12,7 @@ const params = () => {
       });
     }
   }
+  return param;
 };
 
 const page = () => {

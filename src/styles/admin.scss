@@ -4,9 +4,8 @@ $lg: 1024px;
 $xl: 1280px;
 
 .admin {
-  padding-top: 86px;
-  padding-bottom: 1rem;
   font-family: 'Poppins', sans-serif;
+  
   .article-list {
     article {
       display: flex;
@@ -108,20 +107,29 @@ $xl: 1280px;
       }
     }
   }
+
   .article-view {
     article {
       h2 {
+        font-family: 'Poppins', sans-serif;
         font-size: 1.5rem;
         color: black;
-        font-family: 'Poppins', sans-serif;
+        @media (min-width: $lg) {
+          font-size: 2rem;
+        }
       }
       p {
+        font-family: 'Poppins', sans-serif;
         font-size: .875rem;
+        @media (min-width: $lg) {
+          font-size: 1.125rem;
+        }
       }
       .action-post {
         display: flex;
         gap: 1.25rem;
         button {
+          font-family: 'Poppins', sans-serif;
           background-color: transparent;
           border: none;
           cursor: pointer;
@@ -147,8 +155,13 @@ $xl: 1280px;
         }
       }
       .article {
+        padding-top: .75rem;
         p {
+          font-family: 'Poppins', sans-serif;
           margin-bottom: .625rem;
+          @media (min-width: $lg) {
+            font-size: 1.125rem;
+          }
         }
       }
     }
@@ -164,30 +177,157 @@ $xl: 1280px;
       }
       form {
         display: flex;
-        padding: .375rem 1rem;
+        padding: .5rem;
         border-radius: .625rem;
         background-color: white;
         margin-top: 1.25rem;
+        flex-direction: row;
+        border: none;
+        align-items: center;
+        span {
+          height: fit-content;
+          display: inline-flex; 
+          padding: .25rem .5rem;
+          background-color: #DBEAFE; 
+          color: #1E40AF; 
+          font-size: 0.875rem;
+          line-height: 1.25rem; 
+          font-weight: 500; 
+          align-items: center; 
+          border-radius: 0.25rem; 
+          button {
+            display: inline-flex; 
+            padding: 0.125rem; 
+            margin-left: 0.5rem; 
+            background-color: transparent; 
+            color: #60A5FA; 
+            font-size: 0.875rem;
+            line-height: 1.25rem; 
+            align-items: center; 
+            border-radius: 0.125rem; 
+            svg {
+              width: 0.875rem; 
+              height: 0.875rem; 
+            }
+          }
+          &.hidden {
+            display: none;
+          }
+        }
         textarea {
-          width: 100%;
+          font-family: 'Poppins', sans-serif;
+          display: block;
+          padding: .125rem .5rem;
+          background-color: #fff; 
+          color: #111827; 
+          font-size: .875rem;
+          width: 100%; 
           border: none;
-          text-decoration: none;
-          padding-bottom: 0;
-          padding-top: .5rem;
+          outline: none;
+          overflow: hidden;
+          resize: none;
         }
+            
         button {
-          background-color: rgb(0, 100, 250);
-          color: white;
+          font-family: 'Poppins', sans-serif;
+          padding: .5rem 1rem;
+          background-color: #1D4ED8; 
+          color: #ffffff; 
+          font-size: 0.875rem;
+          line-height: 1.25rem; 
+          font-weight: 500; 
+          border-radius: 0.5rem; 
           border: none;
-          border-radius: .375rem;
-          padding: .375rem 1rem;
-          cursor: pointer;
+          height: fit-content;
+          &:hover {
+            background-color: rgb(0, 82, 204);
+          }
         }
-        button:hover {
-          background-color: rgb(0, 82, 204);
+          
+
+          
+      }
+    }
+    .comment-list {
+      margin-top: 30px;
+    }
+    .comment {
+      display: flex;
+      margin-top: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid black;
+      picture {
+        background-color: rgb(209, 209, 209);
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+      .comment-content {
+        margin-left: 10px;
+        h5 {
+          margin: 0;
+        }
+        h6 {
+          margin: 0;
+          font-weight: 400;
+          margin-bottom: .25rem;
+        }
+        .action {
+          margin-top: .5rem;
+          font-weight: 400;
+          display: flex;
+          flex-direction: row;
+          gap: .5rem;
+          span {
+            height: fit-content;
+            display: inline-flex;
+            color: rgb(131, 131, 131);
+            font-size: 0.875rem;
+            line-height: 1.25rem; 
+            font-weight: 500; 
+            align-items: center; 
+            button {
+              display: inline-flex;
+              margin-right: 0.5rem; 
+              background-color: transparent; 
+              color: rgb(131, 131, 131); 
+              font-size: 0.875rem;
+              line-height: 1.25rem; 
+              align-items: center; 
+              border: none;
+              cursor: pointer;
+              svg {
+                width: 0.875rem; 
+                height: 0.875rem; 
+              }
+            }
+            &:hover {
+              color: black;
+            }
+          }
+          button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: rgb(131, 131, 131);
+            &:hover {
+              color: black;
+            }
+          }
         }
       }
     }
+    .replies {
+      padding-left: 5%;
+    }
+  }
+
+  .hidden {
+    display: none;
   }
   .container {
     width: 85%;

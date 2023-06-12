@@ -5,9 +5,10 @@ class Comment {
     const options = {
       method: 'POST',
       body: JSON.stringify(data),
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.COMMENT(articleId), options);
@@ -18,9 +19,10 @@ class Comment {
     const options = {
       method: 'POST',
       body: '{}',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.LIKE_COMMENT(articleId, commentId), options);
@@ -31,9 +33,10 @@ class Comment {
     const options = {
       method: 'POST',
       body: '{}',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.DISLIKE_COMMENT(articleId, commentId), options);
@@ -44,9 +47,10 @@ class Comment {
     const options = {
       method: 'POST',
       body: '{}',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.REPLY_COMMENT(articleId, commentId), options);

@@ -3,8 +3,9 @@ import API from '../globals/api-endpoint';
 class User {
   static async infoProfile() {
     const options = {
+      credentials: 'include',
       headers: {
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.USER, options);
@@ -15,9 +16,10 @@ class User {
     const options = {
       method: 'PUT',
       body: JSON.stringify(data),
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.USER, options);
@@ -28,9 +30,10 @@ class User {
     const options = {
       method: 'PUT',
       body: JSON.stringify(data),
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        Authentication: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
     const response = await fetch(API.CHANGE_PASSWORD, options);

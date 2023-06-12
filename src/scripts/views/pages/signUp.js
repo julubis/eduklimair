@@ -41,7 +41,7 @@ const SignUp = {
       try {
         button.innerText = 'Sign Up ...';
         button.disabled = true;
-        const { error, message } = await Auth.signin(dataForm);
+        const { error, message } = await Auth.signup(dataForm);
         if (error) {
           button.innerText = 'Sign Up';
           button.disabled = false;
