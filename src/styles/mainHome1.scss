@@ -108,7 +108,7 @@ h2 {
   margin: 10px 0px;
   border: 0px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 0;
   background-color: rgba(240, 248, 255, 0);
 }
 #infografisLatest1 #infografisLatest2 {
@@ -151,11 +151,6 @@ h2 {
   color: rgb(0, 119, 255);
   cursor: pointer;
   background-color: rgba(240, 248, 255, 0);
-}
-#lingkaranCerah {
-  width: 20px;
-  border-radius: 50px;
-  background-color: blueviolet;
 }
 #tombolBalik,
 #tombolLanjut {

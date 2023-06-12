@@ -9,6 +9,8 @@ import '../styles/admin.scss';
 import '../styles/articles.scss';
 import '../styles/articleView.scss';
 // import './utils/tombolLatest';
+import './utils/navigationDrawer';
+import './utils/tombolLatest';
 import App from './views/app';
 
 const app = new App({ content: document.querySelector('main') });

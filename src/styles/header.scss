@@ -15,7 +15,7 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1;
-  padding: 1px 10px;
+  padding: 1px 1px;
 }
 // LOGO
 #logo {
@@ -48,45 +48,55 @@ header {
   padding: 7px;
 }
 // DROPDOWN MENU "ARTICLE"
-#dropDownArticle,
 #dropDownUser {
   display: flex;
   flex-direction: column;
   position: absolute;
   z-index: 999;
-  display: none;
   background-color: aliceblue;
   border-radius: 10px;
+  padding: 0px;
   border: 1px solid blue;
 }
-#dropDownArticle li,
-#dropDownUser li {
-  padding: 13px;
+#dropDownArticle{
+  display: none;
+  width: 100%;
+  flex-direction: row;
+  position: absolute;
+  z-index: 999;
+  background-color: aliceblue;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 69px;
+  justify-content: center;
+}
+#dropDownArticle li, #dropDownUser li {
+  padding: 15px 0px;
   color: rgb(0, 119, 255);
   display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#dropDownArticle h4{
+  padding: 15px 0px;
+  color: rgb(0, 119, 255);
+  display: block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .listItemArticles {
   background-color: aliceblue;
   display: none;
+  margin: 0px 30px;
 }
-#listArticle:hover #dropDownArticle,
-.listUser:hover #dropDownUser {
-  display: block;
-}
-.dropDownUser:hover .dropdown-item {
-  display: block;
-}
+
 #dropDownArticle .childListItemArticles li {
   display: block;
-  background: rgb(0,187,225);
-  background: linear-gradient(90deg, rgba(0,187,225,1) 39%, rgba(16,67,175,1) 100%);
-  color: aliceblue;
+  background-color: aliceblue;
+  color: rgb(0, 0, 0);
 }
 .childListItemArticles {
-  display: none;
+  display: block;
 }
-#header:hover footer {
-  color: brown;
+.childListItemArticles li:hover {
+  font-weight: bold;
 }
 .tampunganDropDown {
   margin-top: 20px;
@@ -117,6 +127,9 @@ header {
   text-decoration: none;
   color: rgb(0, 119, 255);
 }
+#ul2 .listItemArticles2{
+  color: rgb(234, 241, 249);
+}
 .dropDownArticle2 .childListItemArticles2,
 .childListItemArticles2 {
   display: none;
@@ -126,9 +139,7 @@ header {
 .childListItemArticles2.open {
   display: block;
 }
-.dropDownArticle2 .childListItemArticles2 li {
-  color: rgb(0, 119, 255);
-}
+
 .dropDownArticle2 {
   display: none;
   background: rgb(0,187,225);
@@ -148,6 +159,12 @@ header {
   display: block;
 }// .dropdown ul
 //     display: none
-
+.vertikal{
+  margin-top: 40px;
+  border-left: 1.5px solid black;
+  border-radius: 5px;
+  height: 150px
+}
+//listArticle
 // .dropdown.open ul
 //     display: block

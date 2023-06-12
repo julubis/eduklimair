@@ -4,16 +4,20 @@ $lg: 1024px;
 $xl: 1280px;
 
 .article-view {
+  padding-top: 70px;
   article {
     h2 {
       font-family: 'Poppins', sans-serif;
       font-size: 1.5rem;
+      text-align: left;
       color: black;
+      padding-left: 0;
       @media (min-width: $lg) {
         font-size: 2rem;
       }
     }
     p {
+      white-space: pre-wrap;
       font-family: 'Poppins', sans-serif;
       font-size: .875rem;
       @media (min-width: $lg) {
