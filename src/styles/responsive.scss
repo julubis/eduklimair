@@ -67,6 +67,18 @@
   .containerAboutUs2 .containerAboutUs4 {
     padding: 55px;
   }
+  #dropDownArticle h4{
+    font-size: 15px;
+    padding: 15px 0px;
+  }
+  #dropDownArticle .childListItemArticles li {
+    font-size: 14px;
+    padding: 5px 0px;
+  }
+  .vertikal{
+    margin-top: 30px;
+    height: 110px
+  }
 }
 
 
@@ -104,6 +116,15 @@
   .containerAboutUs7 .containerAboutUs8 .tombolAboutUs {
     margin: 0px 5px;
   }
+  .listItemArticles {
+    background-color: aliceblue;
+    display: none;
+    margin: 0px 25px;
+  }
+  .vertikal{
+    margin-top: 30px;
+    height: 110px
+  }
 }
 
 
@@ -112,9 +133,39 @@
   .containerAboutUs2 .containerAboutUs4 {
     padding: 35px;
   }
+  .listItemArticles {
+    background-color: aliceblue;
+    display: none;
+    margin: 0px 20px;
+  }
+  .vertikal{
+    margin-top: 30px;
+    height: 110px
+  }
 }
 
-
+@media screen and (max-width: 770px) {
+  .containerAboutUs2 .containerAboutUs4 {
+    padding: 35px;
+  }
+  .listItemArticles {
+    background-color: aliceblue;
+    display: none;
+    margin: 0px 15px;
+  }
+  .vertikal{
+    margin-top: 30px;
+    height: 110px
+  }
+  #dropDownArticle h4{
+    font-size: 14px;
+    padding: 15px 0px;
+  }
+  #dropDownArticle .childListItemArticles li {
+    font-size: 12px;
+    padding: 5px 0px;
+  }
+}
 
 @media screen and (max-width: 700px) {
   #footer {
@@ -207,6 +258,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: auto;
+  }
+  #header #dropDownArticle{
+    display: none;
   }
 }
 
