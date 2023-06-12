@@ -1,4 +1,4 @@
-const listItemArticles2 = document.querySelectorAll('.listItemArticles2');
+/*const listItemArticles2 = document.querySelectorAll('.listItemArticles2');
 const childListItemArticles2 = document.querySelectorAll('.childListItemArticles2');
 const dropDownArticle = document.getElementById('dropDownArticle');
 const dropDownArticle2 = document.getElementById('dropDownArticle2');
@@ -74,4 +74,4 @@ listArticle.addEventListener('click', () => {
     dropDownArticle.style.display = 'flex';
   }
   console.log(`m= ${m}`);
-});
+});*/

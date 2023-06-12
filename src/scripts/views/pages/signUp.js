@@ -8,7 +8,7 @@ const SignUp = {
     return `
     <div id="containerSignUp1">
       <div id="containerSignUp2">
-        <img src="./gambarSignUp.svg" width="100%">
+        <img src="./gambarSignUp.svg" width="85%">
       </div>
       <div id="containerSignUp3">
         <div id="containerSignUp4">
