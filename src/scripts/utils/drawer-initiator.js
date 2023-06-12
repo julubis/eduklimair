@@ -3,9 +3,10 @@ import jwtDecode from 'jwt-decode';
 const nav2 = document.getElementById('nav2');
 const ul2 = document.getElementById('ul2');
 const logo = document.getElementById('logo');
-
+const dropDownArticle = document.getElementById('dropDownArticle');
 const hamburgerButton = document.getElementById('hamburgerButton');
-
+const listArticle = document.getElementById('listArticle');
+let m = 0;
 const DrawerInitiator = {
   init() {
     const token = localStorage.getItem('token');
@@ -58,6 +59,17 @@ const DrawerInitiator = {
       document.querySelectorAll('.dropdown-item').forEach((item) => {
         item.classList.remove('open');
       });
+    });
+    listArticle.addEventListener('click', () => {
+      m += 1;
+      if (m % 2 === 0) {
+        listArticle.innerText = 'Article ▼';
+        dropDownArticle.style.display = 'none';
+      } else {
+        listArticle.innerText = 'Article ▲';
+        dropDownArticle.style.display = 'flex';
+      }
+      console.log(`m= ${m}`);
     });
   },
 };

@@ -6,7 +6,7 @@
 }
 // HEADER
 header {
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   flex-direction: row;
   background: rgb(0,187,225);
@@ -164,6 +164,32 @@ header {
   border-left: 1.5px solid black;
   border-radius: 5px;
   height: 150px
+}
+#masukAkun{
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+  margin: auto 0px;
+  column-gap: 15px;
+}
+#masukAkun p{
+  margin: auto;
+  color: aliceblue;
+  font-size: 15px;
+}
+#masukAkun2{
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+  margin: auto 0px;
+  column-gap: 15px;
+}
+#masukAkun2 p{
+  margin: auto;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
 }
 //listArticle
 // .dropdown.open ul
