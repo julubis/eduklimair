@@ -1,5 +1,6 @@
 import Home from '../views/pages/home';
 import About from '../views/pages/aboutUs';
+import Favorite from '../views/pages/favorite';
 import SignUp from '../views/pages/signUp';
 import SignIn from '../views/pages/signIn';
 import SignOut from '../views/pages/signOut';

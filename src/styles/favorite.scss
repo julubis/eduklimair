@@ -1,0 +1,33 @@
+#containerFavorite1{
+    padding: 70px 0px 0px;
+    row-gap: 100px;
+    margin: auto;
+    
+}
+#containerFavorite1 h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 40px 0px 20px;
+}
+#containerFavorite2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+    margin: 0px auto 20px;
+    padding: 0px 35px;
+}
+.containerFavorite3 {
+    column-gap: 20px;
+    width: 90%;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+.containerFavorite4 {
+    width: 100%;
+}
+h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

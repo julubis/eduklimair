@@ -131,6 +131,9 @@
   #header #masukAkun p{
     display: none;
   }
+  #containerFavorite1 #containerFavorite2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 
@@ -283,6 +286,15 @@
     padding: 20px 0px;
     font-size: 25px;
   }
+  #containerFavorite1 #containerFavorite2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .containerFavorite3 {
+    column-gap: 20px;
+    width: 85%;
+    border-radius: 5px;
+    margin: 0px;
+}
 }
 
 
@@ -321,6 +333,12 @@
   }
   .containerAboutUs6 .containerAboutUs7 {
     margin: 8px;
+  }
+  #containerFavorite1 #containerFavorite2 {
+    padding: 0px 5px;
+  }
+  #containerFavorite1 #containerFavorite2 .containerFavorite3 div p{
+    font-size: 15px;
   }
 }
 
@@ -420,6 +438,9 @@
   }
   .containerAboutUs7 .containerAboutUs8 .tombolAboutUs img {
     width: 17px;
+  }
+  #containerFavorite1 #containerFavorite2 {
+    grid-template-columns: 1fr;
   }
 }
 

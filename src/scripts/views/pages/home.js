@@ -78,11 +78,13 @@ const Home = {
             <div id="lain2">
               <button class="tombolLatest2"><img src="./beforeLatest.png" width="50px" height="50px"></button>
               <div id="overflowArticles">
-                <div class="container7">
+              <div class="container7">
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <p>Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
                     <button id="readmore">Read More</button>
                   </div>
                 </div> 
@@ -90,7 +92,9 @@ const Home = {
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <p>Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
                     <button id="readmore">Read More</button>
                   </div>
                 </div> 
@@ -98,7 +102,9 @@ const Home = {
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <p>Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
                     <button id="readmore">Read More</button>
                   </div>
                 </div> 
@@ -106,7 +112,9 @@ const Home = {
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <p>Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
                     <button id="readmore">Read More</button>
                   </div>
                 </div> 
@@ -114,7 +122,9 @@ const Home = {
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <p>Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
                     <button id="readmore">Read More</button>
                   </div>
                 </div> 
@@ -122,7 +132,29 @@ const Home = {
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <p>Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
+                    <button id="readmore">Read More</button>
+                  </div>
+                </div> 
+                <div class="container7">
+                  <img src="./banjir.jpg" width="200px">
+                  <div class="container8">
+                    <h3>Banjir</h3>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
+                    <button id="readmore">Read More</button>
+                  </div>
+                </div> 
+                <div class="container7">
+                  <img src="./banjir.jpg" width="200px">
+                  <div class="container8">
+                    <h3>Banjir</h3>
+                    <div style="overflow: hidden; height: 65px">
+                      <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
+                    </div>
                     <button id="readmore">Read More</button>
                   </div>
                 </div> 
