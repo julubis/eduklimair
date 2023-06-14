@@ -33,6 +33,7 @@ const SignUp = {
       `;
   },
   async afterRender() {
+    const toast = document.querySelector('app-toast');
     const form = document.querySelector('form#signUpForm');
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -45,17 +46,16 @@ const SignUp = {
         if (error) {
           button.innerText = 'Sign Up';
           button.disabled = false;
-          console.error(message);
+          toast.danger(message);
           return;
         }
         button.innerText = 'Sign Up';
         button.disabled = false;
-        console.log(message);
         window.location.href = '#/signin';
       } catch (e) {
         button.innerText = 'Sign Up';
         button.disabled = false;
-        console.error(e);
+        toast.danger('Fetch failed');
       }
     });
   },

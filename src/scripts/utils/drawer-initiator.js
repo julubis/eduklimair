@@ -1,4 +1,5 @@
 import jwtDecode from 'jwt-decode';
+import API from '../globals/api-endpoint';
 
 const nav2 = document.getElementById('nav2');
 const ul2 = document.getElementById('ul2');
@@ -6,31 +7,29 @@ const logo = document.getElementById('logo');
 const dropDownArticle = document.getElementById('dropDownArticle');
 const hamburgerButton = document.getElementById('hamburgerButton');
 const listArticle = document.getElementById('listArticle');
+const masukAkun = document.getElementById('masukAkun');
+const sign = document.getElementById('signLogInOut');
+const sign2 = document.getElementById('signLogInOut2');
 let m = 0;
 const DrawerInitiator = {
   init() {
     const token = localStorage.getItem('token');
     if (token) {
-      const { username } = jwtDecode(token);
-      const sign = document.querySelector('#signLogInOut');
-      const sign2 = document.querySelector('#signLogInOut2');
-      sign.classList.add('listUser');
-      sign.innerHTML = `${username}
-      <div class="tampunganDropDown">
-      <ul id="dropDownUser" class="dropdown-item">
+      const { username, name } = jwtDecode(token);
+      sign.style.display = 'none';
+      sign2.style.display = 'none';
+      masukAkun.style.display = 'flex';
+      document.getElementById('username').textContent = `Hi, ${name}`;
+      document.getElementById('user-img').src = API.IMAGE_PROFILE(username);
+      document.getElementById('dropDownUser').innerHTML = `
         <li class="listItemArticles"><a href="#/profile">Profile</a></li>
         ${username === 'admin' ? '<li class="listItemArticles"><a href="#/admin">Dashboard</a></li>' : ''}
-        <li class="listItemArticles"><a href="#/signout">Sign out</a></li>
-      </ul>`;
-      sign2.classList.add('listItemArticles2', 'dropdown');
-      sign2.innerHTML = username;
-      ul2.innerHTML += `
-      <ul class="dropDownArticle2 dropdown-item">
-        <li><a href="#/profile">Profile</a></li>
-        ${username === 'admin' ? '<li><a href="#/admin">Dashboard</a></li>' : ''}
-        <li><a href="#/signout">Sign out</a></li>
-      </ul>
-      </div>`;
+        <li class="listItemArticles"><a href="#/signout">Logout</a></li>
+      `;
+    } else {
+      sign.style.display = 'inline-block';
+      sign2.style.display = 'inline-block';
+      masukAkun.style.display = 'none';
     }
 
     const dropdowns = document.querySelectorAll('.dropdown');
@@ -48,6 +47,7 @@ const DrawerInitiator = {
     });
     // close navbar
     window.addEventListener('click', (e) => {
+      document.querySelector('.dropdown-child').classList.remove('open');
       e.stopPropagation();
       if (e.target !== nav2) {
         nav2.style.left = '100%';

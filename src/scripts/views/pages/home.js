@@ -129,7 +129,7 @@ const Home = {
               </div>
               <button class="tombolLatest2"><img src="./nextLatest.png" width="50px" height="50px"></button>
             </div>
-            <button class="selengkapnya">Selengkapnya</button>
+            <a class="selengkapnya" href="#/articles">Selengkapnya</a>
           </div>
         </div>
     </div>

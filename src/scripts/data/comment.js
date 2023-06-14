@@ -43,10 +43,10 @@ class Comment {
     return response.json();
   }
 
-  static async reply(articleId, commentId) {
+  static async reply(articleId, commentId, data) {
     const options = {
       method: 'POST',
-      body: '{}',
+      body: JSON.stringify(data),
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',

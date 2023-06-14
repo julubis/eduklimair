@@ -9,82 +9,58 @@
   <title>Eduklimair</title>
 </head>
 <body id="body">
+  <app-toast></app-toast>
   <header id="header">
     <h1 id="logo"><a href="#">Eduklimair.</a></h1>
     <p id="tampunganKosong2"></p>
     <!-- NAVIGATION DESKTOP LOG OUT-->
     <nav id="nav1">
       <ul id="ul1">
-      <li><a href="#">Home</a></li>
-      <li id="listArticle" class="dropdown">Article ▼</li>
-      <li><a href="#/about">About Us</a></li>
-      <li id="signLogInOut"><a href="#/signin">Sign in</a></li>
-    </ul>
-    </nav>
-      <ul id="dropDownArticle" class="dropdown-item">
-        <li class="listItemArticles dropdown">
-          <h4>Kelangkaan Air Bersih</h4>
-          <ul class="childListItemArticles dropdown-item">
-            <li>Pengertian</li>
-            <li>Permasalahan</li>
-            <li>Inovasi</li>
-          </ul>
-        </li>
-        <li class="vertikal listItemArticles dropdown"></li>
-        <li class="listItemArticles dropdown">
-          <h4>Sanitasi yang tidak layak</h4>
-          <ul class="childListItemArticles dropdown-item">
-            <li>Pengertian</li>
-            <li>Permasalahan</li>
-            <li>Inovasi</li>
-          </ul>
-        </li>
-        <li class="vertikal listItemArticles dropdown"></li>
-        <li class="listItemArticles dropdown">
-          <h4>Perubahan iklim di Indonesia</h4>
-          <ul class="childListItemArticles dropdown-item">
-            <li>Pengertian</li>
-            <li>Permasalahan</li>
-            <li>Inovasi</li>
-          </ul>
-        </li>
-      </ul>
-
-
-    <!-- NAVIGATION MOBILE LOG OUT-->
-    <nav id="nav2">
-      <ul id="ul2">
         <li><a href="#">Home</a></li>
-        <li id="listArticle2" class="dropdown">Article</li>
-          <ul class="dropDownArticle2 dropdown-item">
-            <li class="listItemArticles2 dropdown">Kelangkaan Air Bersih</li>
-              <ul class="childListItemArticles2 dropdown-item">
-                <li>Pengertian</li>
-                <li>Permasalahan</li>
-                <li>Inovasi</li>
-              </ul>
-            <li class="listItemArticles2 dropdown">Sanitasi yang tidak layak</li>
-              <ul class="childListItemArticles2 dropdown-item">
-                <li>Pengertian</li>
-                <li>Permasalahan</li>
-                <li>Inovasi</li>
-              </ul>
-            <li class="listItemArticles2 dropdown">Perubahan iklim di Indonesia</li>
-              <ul class="childListItemArticles2 dropdown-item">
-                <li>Pengertian</li>
-                <li>Permasalahan</li>
-                <li>Inovasi</li>
-              </ul>
-          </ul>
-          <li><a href="#/about">About Us</a></li>
-          <li id="signLogInOut2"><a href="#/signin">Sign in</a></li>
+        <li id="listArticle" class="dropdown">Article ▼</li>
+        <li><a href="#/about">About Us</a></li>
+        <li id="signLogInOut"><a href="#/signin">Sign in</a></li>
+      </ul>
+    </nav>
+    <ul id="dropDownArticle">
+      <li class="listItemArticles ">
+        <h4>Kelangkaan Air Bersih</h4>
+        <ul class="childListItemArticles ">
+          <li>Pengertian</li>
+          <li>Permasalahan</li>
+          <li>Inovasi</li>
         </ul>
-      </nav>
-    <p id="tampunganKosong2"></p>
-    <img id="hamburgerButton" src="./hamburgerButton.png" width="50px" height="50px">
-    
-    
-    <!-- NAVIGATION DESKTOP LOG IN-->
+      </li>
+      <li class="vertikal listItemArticles "></li>
+      <li class="listItemArticles ">
+        <h4>Sanitasi yang tidak layak</h4>
+        <ul class="childListItemArticles ">
+          <li>Pengertian</li>
+          <li>Permasalahan</li>
+          <li>Inovasi</li>
+        </ul>
+      </li>
+      <li class="vertikal listItemArticles "></li>
+      <li class="listItemArticles ">
+        <h4>Perubahan iklim di Indonesia</h4>
+        <ul class="childListItemArticles">
+          <li>Pengertian</li>
+          <li>Permasalahan</li>
+          <li>Inovasi</li>
+        </ul>
+      </li>
+    </ul>
+    <p id="tampunganKosong"></p>
+    <button id="masukAkun"  class="dropdown">
+      <p id="username"></p>
+      <img id="user-img" src="./profileWhite.png" width="30px" height="30px">
+      
+    </button>
+    <ul id="dropDownUser" class="dropdown-child"></ul>
+      
+      
+
+      <!-- NAVIGATION DESKTOP LOG IN-->
     <!--<nav id="nav1">
       <ul id="ul1">
         <li><a href="#">Home</a></li>
@@ -126,6 +102,42 @@
       <img src="./profileWhite.png" width="30px">
     </button>-->
 
+
+
+    <!-- NAVIGATION MOBILE LOG OUT-->
+    <nav id="nav2">
+      <ul id="ul2">
+        <li><a href="#">Home</a></li>
+        <li id="listArticle2" class="dropdown">Article</li>
+          <ul class="dropDownArticle2 dropdown-item">
+            <li class="listItemArticles2 dropdown">Kelangkaan Air Bersih</li>
+              <ul class="childListItemArticles2 dropdown-item">
+                <li>Pengertian</li>
+                <li>Permasalahan</li>
+                <li>Inovasi</li>
+              </ul>
+            <li class="listItemArticles2 dropdown">Sanitasi yang tidak layak</li>
+              <ul class="childListItemArticles2 dropdown-item">
+                <li>Pengertian</li>
+                <li>Permasalahan</li>
+                <li>Inovasi</li>
+              </ul>
+            <li class="listItemArticles2 dropdown">Perubahan iklim di Indonesia</li>
+              <ul class="childListItemArticles2 dropdown-item">
+                <li>Pengertian</li>
+                <li>Permasalahan</li>
+                <li>Inovasi</li>
+              </ul>
+          </ul>
+          <li><a href="#/about">About Us</a></li>
+          <li id="signLogInOut2"><a href="#/signin">Sign in</a></li>
+        </ul>
+      </nav>
+    <p id="tampunganKosong2"></p>
+    <img id="hamburgerButton" src="./hamburgerButton.png" width="50px" height="50px">
+    
+    
+    
 
     <!-- NAVIGATION MOBILE LOG IN-->
     <!-- <nav id="nav2">

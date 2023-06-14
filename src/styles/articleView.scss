@@ -5,6 +5,7 @@ $xl: 1280px;
 
 .article-view {
   padding-top: 70px;
+  padding-bottom: 1rem;
   article {
     h2 {
       font-family: 'Poppins', sans-serif;
@@ -12,6 +13,15 @@ $xl: 1280px;
       text-align: left;
       color: black;
       padding-left: 0;
+
+      &.skeleton {
+        width: 100%;
+        height: 2rem;
+        margin-bottom: .5rem;
+        @media (min-width: $lg) {
+          height: 2.5rem;
+        }
+      }
       @media (min-width: $lg) {
         font-size: 2rem;
       }
@@ -20,6 +30,15 @@ $xl: 1280px;
       white-space: pre-wrap;
       font-family: 'Poppins', sans-serif;
       font-size: .875rem;
+
+      &.skeleton {
+        width: 20%;
+        height: .875rem;
+        @media (min-width: $lg) {
+          height: 1.125rem;
+        }
+      }
+
       @media (min-width: $lg) {
         font-size: 1.125rem;
       }
@@ -45,9 +64,15 @@ $xl: 1280px;
     picture {
       margin-top: 1.25rem;
       margin-bottom: .625rem;
+
+      .skeleton {
+        margin-top: 1rem;
+        width: 100%;
+        aspect-ratio: 2 / 1;
+      }
       img {
         width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 2 / 1;
         object-position: center;
         object-fit: cover;
         border-radius: .5rem;
@@ -56,8 +81,16 @@ $xl: 1280px;
     .article {
       padding-top: .75rem;
       p {
+        white-space: pre-wrap;
         font-family: 'Poppins', sans-serif;
         margin-bottom: .625rem;
+        &.skeleton {
+          width: 100%;
+          height: .875rem;
+          @media (min-width: $lg) {
+            height: 1.125rem;
+          }
+        }
         @media (min-width: $lg) {
           font-size: 1.125rem;
         }
@@ -70,6 +103,7 @@ $xl: 1280px;
     padding: .625rem;
     margin-top: 1.25rem;
     h6 {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       font-size: .875rem;
       font-weight: 600;
@@ -95,6 +129,7 @@ $xl: 1280px;
         align-items: center; 
         border-radius: 0.25rem; 
         button {
+          font-family: 'Poppins', sans-serif;
           display: inline-flex; 
           padding: 0.125rem; 
           margin-left: 0.5rem; 
@@ -168,9 +203,11 @@ $xl: 1280px;
     .comment-content {
       margin-left: 10px;
       h5 {
+        font-family: 'Poppins', sans-serif;
         margin: 0;
       }
       h6 {
+        font-family: 'Poppins', sans-serif;
         margin: 0;
         font-weight: 400;
         margin-bottom: .25rem;

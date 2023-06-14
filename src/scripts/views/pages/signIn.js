@@ -28,6 +28,7 @@ const SignIn = {
       `;
   },
   async afterRender() {
+    const toast = document.querySelector('app-toast');
     const form = document.querySelector('form#signInForm');
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -37,20 +38,20 @@ const SignIn = {
         button.innerText = 'Sign In ...';
         button.disabled = true;
         const { error, data, message } = await Auth.signin({ email, password });
-        const { token } = data;
         if (error) {
           button.innerText = 'Sign In';
           button.disabled = false;
-          console.error(message);
+          toast.danger(message);
           return;
         }
+        const { token } = data;
         button.innerText = 'Sign In';
         button.disabled = false;
         setToken(token);
       } catch (e) {
         button.innerText = 'Sign In';
         button.disabled = false;
-        console.error(e);
+        toast.danger('Fetch failed');
       }
     });
   },

@@ -1,5 +1,7 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-param-reassign */
-import '../templates/article-list';
+import momen from 'moment';
+import API_ENDPOINT from '../../globals/api-endpoint';
 import Article from '../../data/article';
 
 const articleView = () => {
@@ -151,27 +153,321 @@ const articleView = () => {
   });
 };
 
-const articleList = () => {
+async function newArticle() {
   const container = document.querySelector('.admin .container');
   container.innerHTML = `
+  <div class="new-article">
+    <h2>Artikel Baru</h2>
+    <form id="add-article">
+      <div class="action">
+        <button type="submit">Simpan</button>
+        <button id="cancel-btn">Batal</button>
+      </div>
+      <input type="text" name="title" placeholder="Judul Artikel" required>
+      <div class="radio">
+        <div class="select">
+          <input checked id="radio-water" type="radio" value="water" name="category" required>
+          <label for="radio-water">Air</label>
+        </div>
+        <div class="select">
+          <input id="radio-climate" type="radio" value="climate" name="category" required>
+          <label for="radio-climate">Iklim</label>
+        </div>
+      </div>
+      <input type="text" class="source" name="source" placeholder="Sumber Artikel" required>
+      <div class="dropzone">
+        <label for="dropzone-file">
+          <img src="">
+          <div>
+            <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+            <p class="">Click to upload or drag and drop image</p>
+          </div>
+          <input id="dropzone-file" type="file" name="image" accept="image/*" required>
+        </label>
+      </div>
+      <textarea name="content" placeholder="Konten Artikel" required></textarea>
+    </form>
+  </div>
+  `;
+  document.querySelector('button#cancel-btn').addEventListener('click', (e) => {
+    articleList();
+  });
+  const imageInput = document.querySelector('input#dropzone-file');
+  imageInput.addEventListener('change', () => {
+    const [file] = imageInput.files;
+    if (file) {
+      document.querySelector('.dropzone label div').style.display = 'none';
+      const img = document.querySelector('label[for="dropzone-file"] img');
+      img.src = URL.createObjectURL(file);
+      img.style.display = 'block';
+    }
+  });
+  const toast = document.querySelector('app-toast');
+  try {
+    const form = document.querySelector('form#add-article');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { error, message } = await Article.add(new FormData(form));
+      if (error) {
+        toast.danger(message);
+        return;
+      }
+      toast.success('Add article success');
+      articleList();
+    });
+  } catch {
+    toast.danger('Fecth error');
+  }
+}
+
+async function editArticle(id) {
+  const container = document.querySelector('.admin .container');
+  container.innerHTML = `
+  <div class="new-article">
+    <h2>Edit Artikel</h2>
+    <form id="edit-article">
+      <div class="action">
+        <button type="submit">Simpan</button>
+        <button id="cancel-btn">Batal</button>
+      </div>
+      <input type="text" name="title" placeholder="Judul Artikel" required>
+      <div class="radio">
+        <div class="select">
+          <input checked id="radio-water" type="radio" value="water" name="category" required>
+          <label for="radio-water">Air</label>
+        </div>
+        <div class="select">
+          <input id="radio-climate" type="radio" value="climate" name="category" required>
+          <label for="radio-climate">Iklim</label>
+        </div>
+      </div>
+      <input type="text" class="source" name="source" placeholder="Sumber Artikel" required>
+      <div class="dropzone">
+        <label for="dropzone-file">
+          <img src="">
+          <input id="dropzone-file" type="file" name="image" accept="image/*" required>
+        </label>
+      </div>
+      <textarea name="content" placeholder="Konten Artikel" required></textarea>
+    </form>
+    <button id="delete-btn">Hapus Artikel</button>
+  </div>
+  `;
+
+  const toast = document.querySelector('app-toast');
+  try {
+    const { data } = await Article.detail(id);
+    const { article } = data;
+    container.innerHTML = `
+    <div class="new-article">
+      <h2>Edit Artikel</h2>
+      <form id="edit-article">
+        <div class="action">
+          <button type="submit">Simpan</button>
+          <button id="cancel-btn">Batal</button>
+        </div>
+        <input type="text" name="title" placeholder="Judul Artikel" value="${article.title}" required>
+        <div class="radio">
+          <div class="select">
+            <input ${article.category === 'water' ? 'checked' : ''} id="radio-water" type="radio" value="water" name="category" required>
+            <label for="radio-water">Air</label>
+          </div>
+          <div class="select">
+            <input ${article.category === 'water' ? '' : 'checked'} id="radio-climate" type="radio" value="climate" name="category" required>
+            <label for="radio-climate">Iklim</label>
+          </div>
+        </div>
+        <input type="text" class="source" name="source" placeholder="Sumber Artikel" value="${article.source}" required>
+        <div class="dropzone">
+          <label for="dropzone-file">
+            <img src="${API_ENDPOINT.IMAGE(article.imageId)}" style="display: block" alt="article image">
+            <input id="dropzone-file" type="file" name="image" accept="image/*">
+          </label>
+        </div>
+        <textarea name="content" placeholder="Konten Artikel" required>${article.content}</textarea>
+      </form>
+      <button id="delete-btn">Hapus Artikel</button>
+    </div>`;
+    const form = document.querySelector('form#edit-article');
+    document.querySelector('button#cancel-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      articleList();
+    });
+    const imageInput = document.querySelector('input#dropzone-file');
+    imageInput.addEventListener('change', () => {
+      const [file] = imageInput.files;
+      if (file) {
+        const img = document.querySelector('label[for="dropzone-file"] img');
+        img.src = URL.createObjectURL(file);
+      }
+    });
+    document.querySelector('#delete-btn').addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const { error, message } = await Article.delete(id);
+      if (error) {
+        toast.danger(message);
+        return;
+      }
+      toast.success('Delete article success');
+      articleList();
+    });
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append('title', form.elements.title.value);
+      formData.append('source', form.elements.source.value);
+      formData.append('content', form.elements.content.value);
+      formData.append('category', form.elements.category.value);
+      if (form.elements.image.files.length > 0) {
+        formData.append('image', form.elements.image.files[0]);
+      }
+      const { error, message } = await Article.update(id, formData);
+      if (error) {
+        toast.danger(message);
+        return;
+      }
+      toast.success('Edit article success');
+      articleList();
+    });
+  } catch (e) {
+    console.log(e);
+    toast.danger('Fecth error');
+  }
+}
+
+async function articleList() {
+  const container = document.querySelector('.admin .container');
+  container.innerHTML = `
+  <div class="action-article">
+    <form id="filter-article">
+      <select name="category">
+        <option value="">Semua</option>
+        <option value="water">Air</option>
+        <option value="climate">Iklim</option>
+      </select>
+      <input type="search" name="title" placeholder="Cari judul artikel...">
+      <button type="submit">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </button>
+    </form>
+    <button id="new-article">Tambah</button>
+  </div>
   <div class="article-list">
     <article>
       <picture>
-        <img src="banjir.jpg" alt="">
+        <div class="skeleton"></div>
       </picture>
       <div class="body">
         <div class="content">
-          <h3>Cara Mengatasi Perubahan Iklim, Kenali Penyebabnya</h3>
-          <h4>Rabu, 23 Mei 2023</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis iste labore sequi eaque dolor esse vero vel earum dolore illo reiciendis neque, minima mollitia nisi nam porro dolores sunt quaerat corrupti in fugit! Quis est architecto quam molestiae totam, enim officiis harum asperiores quaerat cumque quisquam rerum, provident dignissimos consequatur!</p>
+          <h3 class="skeleton"></h3>
+          <h4 class="skeleton"></h4>
+          <p class="skeleton"></p>
+          <p class="skeleton"></p>
+          <p class="skeleton"></p>
         </div>
-        <div><button id="view-article">Read more</button></div>
+        <div><button class="skeleton"></button></div>
+      </div>
+    </article>
+    <article>
+      <picture>
+        <div class="skeleton"></div>
+      </picture>
+      <div class="body">
+        <div class="content">
+          <h3 class="skeleton"></h3>
+          <h4 class="skeleton"></h4>
+          <p class="skeleton"></p>
+          <p class="skeleton"></p>
+          <p class="skeleton"></p>
+        </div>
+        <div><button class="skeleton"></button></div>
+      </div>
+    </article>
+    <article>
+      <picture>
+        <div class="skeleton"></div>
+      </picture>
+      <div class="body">
+        <div class="content">
+          <h3 class="skeleton"></h3>
+          <h4 class="skeleton"></h4>
+          <p class="skeleton"></p>
+          <p class="skeleton"></p>
+          <p class="skeleton"></p>
+        </div>
+        <div><button class="skeleton"></button></div>
       </div>
     </article>
   </div>
   `;
-  document.querySelector('button#view-article').onclick = articleView;
-};
+  const toast = document.querySelector('app-toast');
+  try {
+    const { error, data } = await Article.list();
+    const { articles } = data;
+    const articlesList = document.querySelector('.article-list');
+    articlesList.innerHTML = `
+    ${articles.map((article) => `
+    <article>
+      <picture>
+        <img src="${API_ENDPOINT.IMAGE_SM(article.imageId)}" alt="Article image">
+      </picture>
+      <div class="body">
+        <div class="content">
+          <h3>${article.title}</h3>
+          <h4>${momen(article.timestamp).locale('id').format('dddd, DD MMMM YYYY')}</h4>
+          <p>${article.content}</p>
+          <button id="view-article" data-id="${article.id}">Edit Artikel</button>
+        </div>
+      </div>
+    </article>
+    `).join('')}`;
+    document.querySelector('button#new-article').addEventListener('click', (e) => {
+      newArticle();
+    });
+    document.querySelectorAll('button#view-article').forEach((button) => {
+      const { id } = button.dataset;
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        editArticle(id);
+      });
+    });
+    const form = document.querySelector('form#filter-article');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const filter = Object.fromEntries(new FormData(form).entries());
+      const articleLists = (await Article.list(filter)).data.articles;
+      articlesList.innerHTML = `
+      ${articleLists.map((article) => `
+      <article>
+        <picture>
+          <img src="${API_ENDPOINT.IMAGE_SM(article.imageId)}" alt="Article image">
+        </picture>
+        <div class="body">
+          <div class="content">
+            <h3>${article.title}</h3>
+            <h4>${momen(article.timestamp).locale('id').format('dddd, DD MMMM YYYY')}</h4>
+            <p>${article.content}</p>
+            <button id="view-article" data-id="${article.id}">Edit Artikel</button>
+          </div>
+        </div>
+      </article>
+      `).join('')}`;
+      document.querySelector('button#new-article').addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        newArticle();
+      });
+      document.querySelectorAll('button#view-article').forEach((button) => {
+        const { id } = button.dataset;
+        button.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          editArticle(id);
+        });
+      });
+    });
+  } catch {
+    toast.danger('Fetch failed');
+  }
+}
 
 const Admin = {
   async render() {
@@ -183,12 +479,7 @@ const Admin = {
     </div>`;
   },
   async afterRender() {
-    // const articleList = document.querySelector('article-list');
-    // const { data } = await Article.list();
-    // console.log(data);
-    // articleList.articles = data.articles;
     articleList();
-    // articleView();
   },
 };
 

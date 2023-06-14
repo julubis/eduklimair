@@ -24,7 +24,6 @@ class Article {
       credentials: 'include',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'multipart/form-data',
       },
     };
     const response = await fetch(API.ARTICLE_LIST, options);
@@ -38,7 +37,6 @@ class Article {
       credentials: 'include',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'multipart/form-data',
       },
     };
     const response = await fetch(API.ARTICLE_DETAIL(id), options);
