@@ -47,18 +47,28 @@ $xl: 1280px;
       display: flex;
       gap: 1.25rem;
       button {
+        margin: .5rem 0;
+        display: flex;
+        gap: .5rem;
+        align-items: center;
         font-family: 'Poppins', sans-serif;
         background-color: transparent;
         border: none;
         cursor: pointer;
         color: rgb(107, 107, 107);
         padding: 0;
-      }
-      button:hover {
-        color: black;
-      }
-      i {
-        margin-left: 3px;
+        font-size: 1rem;
+        svg {
+          fill: none;
+          width: 1.375rem;
+          height: 1.375rem;
+        }
+        &:hover {
+          color: black;
+        }
+        &.active > svg {
+          fill: currentColor;
+        }
       }
     }
     picture {
@@ -68,11 +78,11 @@ $xl: 1280px;
       .skeleton {
         margin-top: 1rem;
         width: 100%;
-        aspect-ratio: 2 / 1;
+        aspect-ratio: 16 / 9;
       }
       img {
         width: 100%;
-        aspect-ratio: 2 / 1;
+        aspect-ratio: 16 / 9;
         object-position: center;
         object-fit: cover;
         border-radius: .5rem;
@@ -212,6 +222,9 @@ $xl: 1280px;
         font-weight: 400;
         margin-bottom: .25rem;
       }
+      p {
+        white-space: pre-wrap;
+      }
       .action {
         margin-top: .5rem;
         font-weight: 400;
@@ -239,17 +252,31 @@ $xl: 1280px;
             svg {
               width: 0.875rem; 
               height: 0.875rem; 
+              fill: none;
+            }
+            &.active {
+              svg {
+                fill: currentColor;
+              }
+            }
+            &:hover {
+              color: black;
             }
           }
+
           &:hover {
             color: black;
           }
         }
         button {
-          background-color: transparent;
+          display: inline-flex;
+          background-color: transparent; 
+          color: rgb(131, 131, 131); 
+          font-size: 0.875rem;
+          line-height: 1.25rem; 
+          align-items: center; 
           border: none;
           cursor: pointer;
-          color: rgb(131, 131, 131);
           &:hover {
             color: black;
           }

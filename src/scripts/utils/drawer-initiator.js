@@ -71,6 +71,10 @@ const DrawerInitiator = {
       }
       console.log(`m= ${m}`);
     });
+
+    // const prevURL = window.history.length > 1 ? window.history[window.history.length - 2] : null;
+
+    console.log(window.history);
   },
 };
 

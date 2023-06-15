@@ -4,7 +4,7 @@ import { setToken } from '../../utils/token';
 const SignIn = {
   async render() {
     if (localStorage.getItem('token')) {
-      window.location.href = '#/';
+      window.history.back();
     }
     return `
     <div id="containerSignUp1">

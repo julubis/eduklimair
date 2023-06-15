@@ -1,11 +1,15 @@
+import Drawer from './drawer-initiator';
+
 const setToken = (token) => {
   localStorage.setItem('token', token);
-  window.location.href = '/';
+  Drawer.init();
+  window.history.back();
 };
 
 const deleteToken = () => {
   localStorage.removeItem('token');
-  window.location.href = '/';
+  Drawer.init();
+  window.location.href = '#/signin';
 };
 
 export { setToken, deleteToken };

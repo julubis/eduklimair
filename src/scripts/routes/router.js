@@ -15,6 +15,7 @@ const routes = [
   { path: /^\/signout\/?$/, handler: SignOut },
   { path: /^\/admin\/?$/, handler: Admin },
   { path: /^\/about\/?$/, handler: About },
+  { path: /^\/favorite\/?$/, handler: Favorite },
   { path: /^\/articles\/?$/, handler: Articles },
   { path: /^\/articles\/(water|climate)$/, handler: Articles },
   { path: /^\/articles\/(water|climate)\/([a-z0-9]+)$/, handler: ArticleView },

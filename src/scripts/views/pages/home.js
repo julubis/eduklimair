@@ -1,3 +1,6 @@
+import Article from '../../data/article';
+import API_ENDPOINT from '../../globals/api-endpoint';
+
 const Home = {
   async render() {
     return `
@@ -76,16 +79,16 @@ const Home = {
           <div id="infografisLatest2">
             <h2>Dive into out latest articles and blog posts</h2>
             <div id="lain2">
-              <button class="tombolLatest2"><img src="./beforeLatest.png" width="50px" height="50px"></button>
+              <button id="btn-back" class="tombolLatest2"><img src="./beforeLatest.png" width="50px" height="50px"></button>
               <div id="overflowArticles">
-              <div class="container7">
+                <div class="container7">
                   <img src="./banjir.jpg" width="200px">
                   <div class="container8">
                     <h3>Banjir</h3>
-                    <div style="overflow: hidden; height: 65px">
+                    <div style="overflow: hidden; height: 65px; margin-bottom: 8px;">
                       <p>Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya... Banjir adalah peristiwa atau keadaan dimana terendamnya...</p>
                     </div>
-                    <button id="readmore">Read More</button>
+                    <a id="readmore" href="#">Read More</a>
                   </div>
                 </div> 
                 <div class="container7">
@@ -159,7 +162,7 @@ const Home = {
                   </div>
                 </div> 
               </div>
-              <button class="tombolLatest2"><img src="./nextLatest.png" width="50px" height="50px"></button>
+              <button id="btn-next" class="tombolLatest2"><img src="./nextLatest.png" width="50px" height="50px"></button>
             </div>
             <a class="selengkapnya" href="#/articles">Selengkapnya</a>
           </div>
@@ -168,7 +171,46 @@ const Home = {
     `;
   },
   async afterRender() {
-    return null;
+    const templates = (articles) => {
+      document.getElementById('overflowArticles').innerHTML = `
+        ${articles.map((article) => `
+          <div class="container7">
+            <img src="${API_ENDPOINT.IMAGE_SM(article.imageId)}" width="200px" height="150px" style="object-fit: cover;">
+            <div class="container8">
+              <h3>${article.title}</h3>
+              <div style="overflow: hidden; height: 65px; margin-bottom: 5px;">
+                <p>${article.content}...</p>
+              </div>
+              <a id="readmore" href="#/articles/${article.category}/${article.id}">Read More</a>
+            </div>
+          </div> 
+        `).join('')}
+      `;
+    };
+    try {
+      let page = 0;
+      const { articles } = (await Article.list()).data;
+      templates(articles.slice(page * 4, (page + 1) * 4));
+
+      document.getElementById('btn-back').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (page > 0) {
+          page -= 1;
+          const articleSlice = articles.slice(page * 4, (page + 1) * 4);
+          if (articleSlice.length > 0) templates(articleSlice);
+        }
+      });
+      document.getElementById('btn-next').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const articleSlice = articles.slice((page + 1) * 4, (page + 2) * 4);
+        if (articleSlice.length > 0) {
+          templates(articleSlice);
+          page += 1;
+        }
+      });
+    } catch (e) {
+      console.error(e);
+    }
   },
 };
 

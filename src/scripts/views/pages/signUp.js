@@ -3,7 +3,7 @@ import Auth from '../../data/auth';
 const SignUp = {
   async render() {
     if (localStorage.getItem('token')) {
-      window.location.href = '#/';
+      window.history.back();
     }
     return `
     <div id="containerSignUp1">
@@ -17,7 +17,7 @@ const SignUp = {
             <label>Nama</label>
             <input class="inputSignUp" type="text" name="name" required>
             <label>Username</label>
-            <input class="inputSignUp" type="text" name="username" required>
+            <input class="inputSignUp" type="text" name="username" pattern="[a-zA-Z0-9]+" required>
             <label>Email</label>
             <input class="inputSignUp" type="email" name="email" required>
             <label>Password</label>
@@ -35,6 +35,11 @@ const SignUp = {
   async afterRender() {
     const toast = document.querySelector('app-toast');
     const form = document.querySelector('form#signUpForm');
+    document.querySelector('input[name="username"]').onkeypress = (e) => {
+      const { key } = e;
+      const regex = /[a-zA-Z0-9]/;
+      if (!regex.test(key)) e.preventDefault();
+    };
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const dataForm = Object.fromEntries(new FormData(form).entries());

@@ -63,7 +63,7 @@ class Article {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };
-    const response = await fetch(API.ARTICLE_DETAIL(id), options);
+    const response = await fetch(API.LIKE_ARTICLE(id), options);
     return response.json();
   }
 }
