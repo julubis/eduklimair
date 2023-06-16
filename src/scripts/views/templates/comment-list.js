@@ -150,6 +150,46 @@ class CommentList extends HTMLElement {
     };
 
     // add event to comment action (like and dislike)
+    document.querySelectorAll('.like-btn').forEach((likeBtn) => {
+      const { id } = likeBtn.dataset;
+      likeBtn.onclick = async (e) => {
+        e.stopPropagation();
+        Comment.like(articleid, id);
+        const dislikeBtn = document.querySelector(`.dislike-btn[data-id="${id}"]`);
+        if (dislikeBtn.classList.contains('active')) {
+          const value = document.querySelector(`p.dislike-value[data-id="${id}"]`);
+          dislikeBtn.classList.remove('active');
+          value.textContent = `${Number(value.textContent) - 1}`;
+        }
+        const value = document.querySelector(`p.like-value[data-id="${id}"]`);
+        if (likeBtn.classList.toggle('active')) {
+          value.textContent = `${Number(value.textContent) + 1}`;
+          return;
+        }
+        value.textContent = `${Number(value.textContent) - 1}`;
+      };
+    });
+    
+    document.querySelectorAll('.dislike-btn').forEach((dislikeBtn) => {
+      const { id } = dislikeBtn.dataset;
+      dislikeBtn.onclick = async (e) => {
+        e.stopPropagation();
+        Comment.dislike(articleid, id);
+        const likeBtn = document.querySelector(`.like-btn[data-id="${id}"]`);
+        if (likeBtn.classList.contains('active')) {
+          const value = document.querySelector(`p.like-value[data-id="${id}"]`);
+          likeBtn.classList.remove('active');
+          value.textContent = `${Number(value.textContent) - 1}`;
+        }
+        const value = document.querySelector(`p.dislike-value[data-id="${id}"]`);
+        if (dislikeBtn.classList.toggle('active')) {
+          value.textContent = `${Number(value.textContent) + 1}`;
+          return;
+        }
+        value.textContent = `${Number(value.textContent) - 1}`;
+      };
+    });
+
   }
 }
 
