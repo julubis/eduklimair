@@ -74,8 +74,32 @@ class ArticleView extends HTMLElement {
     const likeButton = document.querySelector('button.like-article');
     const shareButton = document.querySelector('button.share-article');
     // like button event
-
+    likeButton.onclick = (e) => {
+      e.stopPropagation();
+      if (this._article.isLiked) {
+        this._article.like -= 1;
+        this._article.isLiked = false;
+      } else {
+        this._article.like += 1;
+        this._article.isLiked = true;
+      }
+      likeButton.innerHTML = `
+        Sukai Postingan (${this._article.like})
+        <svg stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+        </svg>
+      `;
+      likeButton.classList.toggle('active');
+      Article.like(this._article.id)
+    };
     // share button event
+    shareButton.onclick = (e) => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => toast.success('Tautan artikel berhasil disalin'))
+        .catch(() => toast.danger('Tautan artikel gagal disalin'));
+    };
+
   }
 }
 
