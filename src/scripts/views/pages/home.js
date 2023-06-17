@@ -177,8 +177,10 @@ const Home = {
           <div class="container7">
             <img src="${API_ENDPOINT.IMAGE_SM(article.imageId)}" width="200px" height="150px" style="object-fit: cover;">
             <div class="container8">
-              <h3>${article.title}</h3>
-              <div style="overflow: hidden; height: 65px; margin-bottom: 5px;">
+              <div style="overflow: hidden; height: 45px; margin-bottom: 8px;">
+                <h3>${article.title}</h3>
+              </div>
+              <div style="overflow: hidden; height: 65px; margin-bottom: 5px; margin: 0px 0px 23px">
                 <p>${article.content}...</p>
               </div>
               <a id="readmore" href="#/articles/${article.category}/${article.id}">Read More</a>

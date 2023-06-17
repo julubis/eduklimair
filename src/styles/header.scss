@@ -180,11 +180,13 @@ header {
   border: 0px;
   margin: auto 0px;
   column-gap: 15px;
+  cursor: pointer;
 }
 #masukAkun p{
   margin: auto;
   color: aliceblue;
   font-size: 15px;
+  cursor: pointer;
 }
 #masukAkun2{
   display: flex;
@@ -193,11 +195,13 @@ header {
   border: 0px;
   margin: auto 0px;
   column-gap: 15px;
+  cursor: pointer;
 }
 #masukAkun2 p{
   margin: auto;
   color: rgb(0, 0, 0);
   font-size: 15px;
+  cursor: pointer;
 }
 
 app-toast {
