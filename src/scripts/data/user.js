@@ -12,13 +12,23 @@ class User {
     return response.json();
   }
 
+  static async favorite() {
+    const options = {
+      credentials: 'include',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    };
+    const response = await fetch(API.FAVORITE, options);
+    return response.json();
+  }
+
   static async changeProfile(data) {
     const options = {
       method: 'PUT',
-      body: JSON.stringify(data),
+      body: data,
       credentials: 'include',
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     };

@@ -9,6 +9,7 @@ import '../styles/admin.scss';
 import '../styles/articles.scss';
 import '../styles/articleView.scss';
 import '../styles/favorite.scss';
+import '../styles/profile.scss';
 // import './utils/tombolLatest';
 import './utils/navigationDrawer';
 import './utils/tombolLatest';

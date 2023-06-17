@@ -4,7 +4,7 @@ import { setToken } from '../../utils/token';
 const SignIn = {
   async render() {
     if (localStorage.getItem('token')) {
-      window.history.back();
+      window.location.href = '#';
     }
     return `
     <div id="containerSignUp1">
@@ -28,6 +28,7 @@ const SignIn = {
       `;
   },
   async afterRender() {
+    if (localStorage.getItem('token')) return;
     const toast = document.querySelector('app-toast');
     const form = document.querySelector('form#signInForm');
     form.addEventListener('submit', async (event) => {

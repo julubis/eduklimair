@@ -20,6 +20,7 @@ const API_ENDPOINT = {
 
   USER: `${CONFIG.BASE_URL}users/profile`,
   CHANGE_PASSWORD: `${CONFIG.BASE_URL}users/change-password`,
+  FAVORITE: `${CONFIG.BASE_URL}users/favorites`,
 };
 
 export default API_ENDPOINT;

@@ -5,6 +5,7 @@ const SignOut = {
     return '';
   },
   async afterRender() {
+    window.location.href = '#';
     deleteToken();
   },
 };

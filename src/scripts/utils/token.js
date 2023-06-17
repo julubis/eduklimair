@@ -3,7 +3,8 @@ import Drawer from './drawer-initiator';
 const setToken = (token) => {
   localStorage.setItem('token', token);
   Drawer.init();
-  window.history.back();
+  if (window.history.length > 1) return window.history.back();
+  window.location.href = '#';
 };
 
 const deleteToken = () => {

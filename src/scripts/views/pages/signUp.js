@@ -3,7 +3,7 @@ import Auth from '../../data/auth';
 const SignUp = {
   async render() {
     if (localStorage.getItem('token')) {
-      window.history.back();
+      window.location.href = '#';
     }
     return `
     <div id="containerSignUp1">
@@ -33,6 +33,7 @@ const SignUp = {
       `;
   },
   async afterRender() {
+    if (localStorage.getItem('token')) return;
     const toast = document.querySelector('app-toast');
     const form = document.querySelector('form#signUpForm');
     document.querySelector('input[name="username"]').onkeypress = (e) => {

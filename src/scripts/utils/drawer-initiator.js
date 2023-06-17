@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import jwtDecode from 'jwt-decode';
 import API from '../globals/api-endpoint';
 
@@ -10,6 +11,7 @@ const listArticle = document.getElementById('listArticle');
 const masukAkun = document.getElementById('masukAkun');
 const sign = document.getElementById('signLogInOut');
 const sign2 = document.getElementById('signLogInOut2');
+const favorites = document.querySelectorAll('li.favorite');
 let m = 0;
 const DrawerInitiator = {
   init() {
@@ -26,41 +28,44 @@ const DrawerInitiator = {
         ${username === 'admin' ? '<li class="listItemArticles"><a href="#/admin">Dashboard</a></li>' : ''}
         <li class="listItemArticles"><a href="#/signout">Logout</a></li>
       `;
+      favorites.forEach((favorite) => { favorite.style.display = 'inline-block'; });
     } else {
       sign.style.display = 'inline-block';
       sign2.style.display = 'inline-block';
       masukAkun.style.display = 'none';
+      favorites.forEach((favorite) => { favorite.style.display = 'none'; });
     }
 
     const dropdowns = document.querySelectorAll('.dropdown');
     // dropdown toggle
     dropdowns.forEach((dropdown) => {
-      dropdown.addEventListener('click', (e) => {
+      dropdown.onclick = (e) => {
         e.stopPropagation();
         dropdown.nextElementSibling.classList.toggle('open');
-      });
+      };
     });
     // open navbar
-    hamburgerButton.addEventListener('click', (e) => {
+    hamburgerButton.onclick = (e) => {
       e.stopPropagation();
       nav2.style.left = '50%';
-    });
+    };
     // close navbar
-    window.addEventListener('click', (e) => {
-      document.querySelector('.dropdown-child').classList.remove('open');
+    window.onclick = (e) => {
       e.stopPropagation();
+      document.querySelector('.dropdown-child').classList.remove('open');
       if (e.target !== nav2) {
         nav2.style.left = '100%';
       }
-    });
+    };
     // hide dropdown
-    logo.addEventListener('mouseover', (e) => {
+    logo.onmouseover = (e) => {
       e.stopPropagation();
       document.querySelectorAll('.dropdown-item').forEach((item) => {
         item.classList.remove('open');
       });
-    });
-    listArticle.addEventListener('click', () => {
+    };
+    listArticle.onclick = (e) => {
+      e.stopPropagation();
       m += 1;
       if (m % 2 === 0) {
         listArticle.innerText = 'Article ▼';
@@ -70,11 +75,7 @@ const DrawerInitiator = {
         dropDownArticle.style.display = 'flex';
       }
       console.log(`m= ${m}`);
-    });
-
-    // const prevURL = window.history.length > 1 ? window.history[window.history.length - 2] : null;
-
-    console.log(window.history);
+    };
   },
 };
 

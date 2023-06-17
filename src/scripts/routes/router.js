@@ -1,6 +1,7 @@
 import Home from '../views/pages/home';
 import About from '../views/pages/aboutUs';
 import Favorite from '../views/pages/favorite';
+import Profile from '../views/pages/profile';
 import SignUp from '../views/pages/signUp';
 import SignIn from '../views/pages/signIn';
 import SignOut from '../views/pages/signOut';
@@ -15,6 +16,7 @@ const routes = [
   { path: /^\/signout\/?$/, handler: SignOut },
   { path: /^\/admin\/?$/, handler: Admin },
   { path: /^\/about\/?$/, handler: About },
+  { path: /^\/profile\/?$/, handler: Profile },
   { path: /^\/favorite\/?$/, handler: Favorite },
   { path: /^\/articles\/?$/, handler: Articles },
   { path: /^\/articles\/(water|climate)$/, handler: Articles },

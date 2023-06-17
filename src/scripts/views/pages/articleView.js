@@ -48,9 +48,6 @@ const initButton = () => {
 
 const ArticleView = {
   async render() {
-    if (!localStorage.getItem('token')) {
-      window.location.href = '#/signin';
-    }
     return `
     <div class="article-view container">
       <article-view></article-view>
@@ -58,7 +55,10 @@ const ArticleView = {
     </div>`;
   },
   async afterRender() {
-    if (!localStorage.getItem('token')) return;
+    if (!localStorage.getItem('token')) {
+      window.location.href = '#/signin';
+      return;
+    }
     const toast = document.querySelector('app-toast');
     const url = window.location.hash.slice(1).toLowerCase();
     const match = url.match(/^\/articles\/(water|climate)\/([a-z0-9]+)$/);
