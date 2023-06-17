@@ -18,10 +18,12 @@ const Favorite = {
       document.getElementById('containerFavorite2').innerHTML = `
         ${articles.map((article) => `
         <div class="containerFavorite3">
-            <img src="${API_ENDPOINT.IMAGE_SM(article.imageId)}" width="100%">
+            <img src="${API_ENDPOINT.IMAGE_SM(article.imageId)}" height="200px">
             <div class="containerFavorite4">
-                <h3>${article.title}</h3>
-                <div style="overflow: hidden; height: 65px">
+                <div style="overflow: hidden; height: 45px;margin: 8px 0px">
+                  <h3>${article.title}</h3>
+                </div>
+                <div style="overflow: hidden; height: 65px; margin-bottom: 20px;">
                     <p>${article.content}...</p>
                 </div>
                 <a href="#/articles/${article.category}/${article.id}" id="readmore">Read More</a>
