@@ -24,7 +24,7 @@ const Favorite = {
                 <div style="overflow: hidden; height: 65px">
                     <p>${article.content}...</p>
                 </div>
-                <a href="#/articles/${articles.category}/${articles.id}" id="readmore">Read More</a>
+                <a href="#/articles/${article.category}/${article.id}" id="readmore">Read More</a>
             </div>
         </div> 
         `).join('')}

@@ -43,6 +43,7 @@ async function editProfile() {
       const { error, message } = await User.changeProfile(formData);
       if (error) return toast.danger(message);
       toast.success('Berhasil mengubah profil');
+      profile();
     } catch (er) {
       console.log(er);
       toast.danger('Fetch failed');
@@ -73,6 +74,7 @@ function changePassword() {
       const { message, error } = await User.changePassword(formData);
       if (error) return toast.danger(message);
       toast.success('Berhasil mengubah password');
+      profile();
     } catch {
       toast.danger('Fetch failed');
     }

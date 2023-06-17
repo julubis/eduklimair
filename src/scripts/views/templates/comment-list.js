@@ -135,16 +135,20 @@ class CommentList extends HTMLElement {
       e.preventDefault();
       const { text } = Object.fromEntries(new FormData(form).entries());
       if (form.dataset.id) {
-        const { error, message } = await Comment.reply(articleid, form.dataset.id, { text });
+        const { error, data, message } = await Comment.reply(articleid, form.dataset.id, { text });
         if (error) return toast.danger(message);
-        // add comment to this._comments
-        this.render();
+        this._comments.forEach((comment, i) => {
+          if (comment.id === form.dataset.id) {
+            this._comments[i].replies.push(data.comment);
+            this.render();
+          }
+        });
         toast.success('Comment replied');
         return;
       }
-      const { error, message } = await Comment.add(articleid, { text });
+      const { error, data, message } = await Comment.add(articleid, { text });
       if (error) return toast.danger(message);
-      // this._comments.push({id: })
+      this._comments.unshift(data.comment);
       this.render();
       toast.success('Comment added');
     };
@@ -169,7 +173,7 @@ class CommentList extends HTMLElement {
         value.textContent = `${Number(value.textContent) - 1}`;
       };
     });
-    
+
     document.querySelectorAll('.dislike-btn').forEach((dislikeBtn) => {
       const { id } = dislikeBtn.dataset;
       dislikeBtn.onclick = async (e) => {
@@ -189,7 +193,6 @@ class CommentList extends HTMLElement {
         value.textContent = `${Number(value.textContent) - 1}`;
       };
     });
-
   }
 }
 
