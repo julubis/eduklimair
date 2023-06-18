@@ -38,9 +38,12 @@ const Home = {
           <div class="container3">
             <h2>Sanitasi Yang Tidak Layak</h2>
             <div class="container5">
-              <p>Berdasarkan data hasil kajian tim peneliti BRIN, telah terjadi perubahan klimatologis di Indonesia selama 19 tahun yaitu 2001-2019.</p> 
+            <p>Berdasarkan data Perserikatan Bangsa-Bangsa (PBB) pada tahun 2013, tercatat ada sekitar 63 juta penduduk Indonesia yang tidak memiliki toilet dan masih buang air besar (BAB) sembarangan, baik itu di sungai, laut maupun tanah. Pembangunan sanitasi di Indonesia memang relatif masih rendah.</p>
 
-              <p>Hakikatnya perubahan iklim merupakan fenomena pemanasan global yang memberikan dampak negatif pada aktivitas kehidupan masyarakat. Dampak negatif perubahan iklim antara lain kenaikan suhu permukaan air laut, intensitas cuaca ekstrem, perubahan pola curah hujan dan gelombang besar.</p>
+            <p>Sementara itu, salah satu tujuan pembangunan berkelanjutan atau Suistainable Development Goals yang diterbitkan PBB dari 21 Oktober 2015 sebagai ambisi pembangunan bersama hingga tahun 2030 yaitu tujuan air bersih dan sanitasi layak: menjamin akses atas air dan sanitasi untuk semua.</p>
+            
+            <p>Eduklimair hadir untuk membantu mengatasi masalah sanitasi yang ada serta mewujudkan salah satu tujuan perkembangunan berkelanjutan atau Suistainable Development Goals Dunia tersebut.</p>
+            
               <h3>Jangan Khawatir karena Eduklimair punya solusinya!</h3>
               <p></p>
               <a class="selengkapnya selengkapnya2" href="#/articles/climate">Selengkapnya</a>
@@ -51,11 +54,9 @@ const Home = {
           <div class="container3">
             <h2>Perubahan Iklim Di Indonesia</h2>
             <div class="container5">
-              <p>Berdasarkan data Perserikatan Bangsa-Bangsa (PBB) pada tahun 2013, tercatat ada sekitar 63 juta penduduk Indonesia yang tidak memiliki toilet dan masih buang air besar (BAB) sembarangan, baik itu di sungai, laut maupun tanah. Pembangunan sanitasi di Indonesia memang relatif masih rendah.</p>
+            <p>Berdasarkan data hasil kajian tim peneliti BRIN, telah terjadi perubahan klimatologis di Indonesia selama 19 tahun yaitu 2001-2019.</p> 
 
-              <p>Sementara itu, salah satu tujuan pembangunan berkelanjutan atau Suistainable Development Goals yang diterbitkan PBB dari 21 Oktober 2015 sebagai ambisi pembangunan bersama hingga tahun 2030 yaitu tujuan air bersih dan sanitasi layak: menjamin akses atas air dan sanitasi untuk semua.</p>
-              
-              <p>Eduklimair hadir untuk membantu mengatasi masalah sanitasi yang ada serta mewujudkan salah satu tujuan perkembangunan berkelanjutan atau Suistainable Development Goals Dunia tersebut.</p>
+              <p>Hakikatnya perubahan iklim merupakan fenomena pemanasan global yang memberikan dampak negatif pada aktivitas kehidupan masyarakat. Dampak negatif perubahan iklim antara lain kenaikan suhu permukaan air laut, intensitas cuaca ekstrem, perubahan pola curah hujan dan gelombang besar.</p>
               <h3>Jangan Khawatir karena Eduklimair punya solusinya!</h3>
               <p></p>
               <p></p>
