@@ -79,6 +79,7 @@ header {
   a {
     text-decoration: none;
   }
+  cursor: pointer;
 }
 #dropDownArticle h4{
   padding: 15px 0px;
@@ -92,7 +93,7 @@ header {
   margin: 0px 30px;
 }
 
-#dropDownArticle .childListItemArticles li {
+#dropDownArticle .childListItemArticles li a {
   display: block;
   background-color: aliceblue;
   color: rgb(0, 0, 0);
