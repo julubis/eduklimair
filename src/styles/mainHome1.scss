@@ -49,18 +49,18 @@ body {
 .container3,
 .container4,
 .container6 {
-  padding: 35px 65px;
+  padding: 35px 105px;
   width: 50%;
   position: relative;
   word-wrap: break-word;
 }
 h2 {
-  padding: 17px;
-  text-align: center;
-  margin: auto;
 }
 .container5 {
-  margin: 40px auto;
+  margin: 20px auto;
+}
+.container5 p {
+  margin: 20px auto;
 }
 .container6 p,
 .container6 h3 {
@@ -146,6 +146,9 @@ h2 {
   border: 0px;
   margin-left: 45%;
   cursor: pointer;
+}
+.selengkapnya2{
+ margin: 30px 0px;
 }
 #readmore {
   text-decoration: none;
