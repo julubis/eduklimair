@@ -15,6 +15,7 @@ import './utils/navigationDrawer';
 import './utils/tombolLatest';
 import './views/templates/app-toast';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({ content: document.querySelector('main') });
 
@@ -24,4 +25,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
